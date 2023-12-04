@@ -264,7 +264,7 @@ INSERT INTO Training (
     TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
 )
 VALUES
-    (5, TO_DATE('2022-11-30', 'YYYY-MM-DD'), 'A+', 4.33, 'PHYS202', 'E', 'Fall 2022', 105, 101);
+    (5, TO_DATE('2022-11-30', 'YYYY-MM-DD'), 'A+', 4.33, 'DBM201', 'E', 'Fall 2022', 105, 101);
 
 INSERT INTO Training (
     TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
