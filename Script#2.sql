@@ -48,15 +48,19 @@ VALUES
 -- Insert data into Course table
 INSERT INTO Course (Crs_ID, Crs_Title, Crs_Type, College_Name, Tuition)
 VALUES
-    ('CS101', 'Introduction to Computer Science', 'Computer Science', 'School of Compueter Science', 1500.00);
+    ('CS101', 'Introduction to Computer Science', 'IT', 'School of Compueter Science', 1500.00);
 
 INSERT INTO Course (Crs_ID, Crs_Title, Crs_Type, College_Name, Tuition)
 VALUES
-    ('DBM201', 'Database Management', 'Information Systems', 'Heinz College', 1200.00);
+    ('DBM201', 'Database Management', 'IT', 'Heinz College', 1200.00);
 
 INSERT INTO Course (Crs_ID, Crs_Title, Crs_Type, College_Name, Tuition)
 VALUES
-    ('MATH301', 'Calculus I', 'Mathematics', 'Mellon College of Science', 1800.00);
+    ('MAT301', 'Calculus I', 'Mathematics', 'Mellon College of Science', 1800.00);
+
+INSERT INTO Course (Crs_ID, Crs_Title, Crs_Type, College_Name, Tuition)
+VALUES
+    ('PYT101', 'Python Programming', 'IT', 'School of Compueter Science', 1550.00);
 
 INSERT INTO Course (Crs_ID, Crs_Title, Crs_Type, College_Name, Tuition)
 VALUES
@@ -67,7 +71,7 @@ VALUES
 
 INSERT INTO Course (Crs_ID, Crs_Title, Crs_Type, College_Name, Tuition)
 VALUES
-    ('PHYS202', 'Physics II', 'Physics', 'Mellon College of Science', 2000.00);
+    ('PHY202', 'Physics II', 'Physics', 'Mellon College of Science', 2000.00);
 
 INSERT INTO Course (Crs_ID, Crs_Title, Crs_Type, College_Name, Tuition)
 VALUES
@@ -90,10 +94,6 @@ VALUES
     ('BUS401', 'Strategic Management', 'Business', 'Heinz College', 1700.00);
 
 
--- Disabling the timestamp constraint for inserting data in TIMESTAMP format
---ALTER TABLE Class
---DISABLE CONSTRAINT Class_Time_CK;
-
 -- Insert data into Class table
 INSERT INTO Class (Crs_ID, Section, Sem_Cmpltd, Day, Time, Instr_ID)
 VALUES
@@ -105,7 +105,11 @@ VALUES
 
 INSERT INTO Class (Crs_ID, Section, Sem_Cmpltd, Day, Time, Instr_ID)
 VALUES
-    ('MATH301', 'C', 'Fall 2022', 'M,W,F', '10:00:00', 3001);
+    ('DBM201', 'A', 'Fall 2023', 'T,TR', '11:00:00', 2001);
+
+INSERT INTO Class (Crs_ID, Section, Sem_Cmpltd, Day, Time, Instr_ID)
+VALUES
+    ('MAT301', 'C', 'Fall 2022', 'M,W,F', '10:00:00', 3001);
 
 INSERT INTO Class (Crs_ID, Section, Sem_Cmpltd, Day, Time, Instr_ID)
 VALUES
@@ -125,6 +129,10 @@ VALUES
 
 INSERT INTO Class (Crs_ID, Section, Sem_Cmpltd, Day, Time, Instr_ID)
 VALUES
+    ('PYT101', 'B', 'Fall 2022', 'T,TR', '15:30:00', 1001);
+
+INSERT INTO Class (Crs_ID, Section, Sem_Cmpltd, Day, Time, Instr_ID)
+VALUES
     ('ART202', 'H', 'Spring 2023', 'M,W,F', '16:45:00', 8001);
 
 INSERT INTO Class (Crs_ID, Section, Sem_Cmpltd, Day, Time, Instr_ID)
@@ -133,7 +141,7 @@ VALUES
 
 INSERT INTO Class (Crs_ID, Section, Sem_Cmpltd, Day, Time, Instr_ID)
 VALUES
-    ('BUS401', 'J', 'Spring 2023', 'T,TR', '12:00:00', 10001);
+    ('BUS401', 'J', 'Fall 2023', 'T,TR', '12:00:00', 10001);
 
 
 -- Insert data into Employee table
@@ -252,7 +260,7 @@ INSERT INTO Training (
     TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
 )
 VALUES
-    (3, TO_DATE('2022-12-22', 'YYYY-MM-DD'), 'A-', 3.67, 'MATH301', 'C', 'Fall 2022', 103, 101);
+    (3, TO_DATE('2022-12-22', 'YYYY-MM-DD'), 'A-', 3.67, 'MAT301', 'C', 'Fall 2022', 103, 101);
 
 INSERT INTO Training (
     TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
@@ -294,7 +302,68 @@ INSERT INTO Training (
     TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
 )
 VALUES
-    (10, TO_DATE('2023-03-15', 'YYYY-MM-DD'), 'B+', 3.33, 'BUS401', 'J', 'Spring 2023', 110, 101);
+    (10, TO_DATE('2023-07-15', 'YYYY-MM-DD'), 'B+', 3.33, 'BUS401', 'J', 'Fall 2023', 110, 101);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (11, TO_DATE('2022-10-15', 'YYYY-MM-DD'), 'A', 4, 'PYT101', 'B', 'Fall 2022', 102, 101);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (12, TO_DATE('2023-08-22', 'YYYY-MM-DD'), 'B+', 3.33, 'BUS401', 'J', 'Fall 2023', 102, 103);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (13, TO_DATE('2023-09-18', 'YYYY-MM-DD'), 'B', 3, 'BUS401', 'J', 'Fall 2023', 104, 101);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (14, TO_DATE('2022-11-02', 'YYYY-MM-DD'), 'A-', 3.67, 'MAT301', 'C', 'Fall 2022', 102, 101);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (15, TO_DATE('2022-08-02', 'YYYY-MM-DD'), 'A', 4, 'MAT301', 'C', 'Fall 2022', 104, 103);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (16, TO_DATE('2022-07-02', 'YYYY-MM-DD'), 'B', 3, 'MAT301', 'C', 'Fall 2022', 105, 101);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (17, TO_DATE('2023-02-18', 'YYYY-MM-DD'), 'A-', 3.67, 'CHEM101', 'F', 'Spring 2023', 105, 101);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (18, TO_DATE('2023-01-11', 'YYYY-MM-DD'), 'B-', 2.67, 'CHEM101', 'F', 'Spring 2023', 102, 101);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (19, TO_DATE('2023-07-15', 'YYYY-MM-DD'), 'B', 3, 'BUS401', 'J', 'Fall 2023', 105, 103);
+
+INSERT INTO Training (
+    TID, Appr_Date, Grade, Score, Crs_ID, Section, Sem_Cmpltd, Emp_ID, ApprovedBy
+)
+VALUES
+    (20, TO_DATE('2023-08-04', 'YYYY-MM-DD'), 'C+', 2.33, 'BUS401', 'J', 'Fall 2023', 107, 101);
+
 
 --Enabling back the previously disabled interconnected constraint
 ALTER TABLE EMPLOYEE
